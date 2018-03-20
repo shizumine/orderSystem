@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+.header {
+	height: 50px;
+	background-color: lightgray;
+}
+
+.header #userspan #showLogin, #showRegist {
+	cursor: pointer;
+	hover: red;
+}
+
+.main {
+	height: 1000px;
+}
+
+.main .recommend-food {
+	
+}
+
+.swiper-container {
+	width: 100%;
+}
+
+.swiper-container img {
+	display: block;
+	width: 100%;
+}
+
+.main #nav-inline {
+	position: absolute;
+}
+
+.main #nav-inline img {
+	width: 100px;
+}
+
+.swiper-container {
+	width: 100%;
+}
+
+.swiper-container img {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+.footer {
+	height: 100px;
+	background-color: green;
+}
