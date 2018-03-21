@@ -3,12 +3,14 @@
 <mapper namespace="com.bishe.mapper.ItemMapper" >
   <resultMap id="BaseResultMap" type="com.bishe.pojo.Item" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="typeId" property="typeid" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="mixture_json" property="mixtureJson" jdbcType="VARCHAR" />
     <result column="discount" property="discount" jdbcType="INTEGER" />
     <result column="price" property="price" jdbcType="REAL" />
+    <result column="vipprice" property="vipprice" jdbcType="REAL" />
+    <result column="cost" property="cost" jdbcType="REAL" />
     <result column="sale" property="sale" jdbcType="INTEGER" />
+    <result column="filename" property="filename" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, typeId, name, mixture_json, discount, price, sale
+    id, name, discount, price, vipprice, cost, sale, filename, path
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bishe.pojo.ItemExample" >
     select
@@ -102,12 +104,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.bishe.pojo.Item" >
-    insert into item (id, typeId, name, 
-      mixture_json, discount, price, 
-      sale)
-    values (#{id,jdbcType=INTEGER}, #{typeid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{mixtureJson,jdbcType=VARCHAR}, #{discount,jdbcType=INTEGER}, #{price,jdbcType=REAL}, 
-      #{sale,jdbcType=INTEGER})
+    insert into item (id, name, discount, 
+      price, vipprice, cost, sale, 
+      filename, path)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{discount,jdbcType=INTEGER}, 
+      #{price,jdbcType=REAL}, #{vipprice,jdbcType=REAL}, #{cost,jdbcType=REAL}, #{sale,jdbcType=INTEGER}, 
+      #{filename,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.bishe.pojo.Item" >
     insert into item
@@ -115,14 +117,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="typeid != null" >
-        typeId,
-      </if>
       <if test="name != null" >
         name,
-      </if>
-      <if test="mixtureJson != null" >
-        mixture_json,
       </if>
       <if test="discount != null" >
         discount,
@@ -130,22 +126,28 @@
       <if test="price != null" >
         price,
       </if>
+      <if test="vipprice != null" >
+        vipprice,
+      </if>
+      <if test="cost != null" >
+        cost,
+      </if>
       <if test="sale != null" >
         sale,
+      </if>
+      <if test="filename != null" >
+        filename,
+      </if>
+      <if test="path != null" >
+        path,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="typeid != null" >
-        #{typeid,jdbcType=INTEGER},
-      </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="mixtureJson != null" >
-        #{mixtureJson,jdbcType=VARCHAR},
       </if>
       <if test="discount != null" >
         #{discount,jdbcType=INTEGER},
@@ -153,8 +155,20 @@
       <if test="price != null" >
         #{price,jdbcType=REAL},
       </if>
+      <if test="vipprice != null" >
+        #{vipprice,jdbcType=REAL},
+      </if>
+      <if test="cost != null" >
+        #{cost,jdbcType=REAL},
+      </if>
       <if test="sale != null" >
         #{sale,jdbcType=INTEGER},
+      </if>
+      <if test="filename != null" >
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -170,14 +184,8 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.typeid != null" >
-        typeId = #{record.typeid,jdbcType=INTEGER},
-      </if>
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.mixtureJson != null" >
-        mixture_json = #{record.mixtureJson,jdbcType=VARCHAR},
       </if>
       <if test="record.discount != null" >
         discount = #{record.discount,jdbcType=INTEGER},
@@ -185,8 +193,20 @@
       <if test="record.price != null" >
         price = #{record.price,jdbcType=REAL},
       </if>
+      <if test="record.vipprice != null" >
+        vipprice = #{record.vipprice,jdbcType=REAL},
+      </if>
+      <if test="record.cost != null" >
+        cost = #{record.cost,jdbcType=REAL},
+      </if>
       <if test="record.sale != null" >
         sale = #{record.sale,jdbcType=INTEGER},
+      </if>
+      <if test="record.filename != null" >
+        filename = #{record.filename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.path != null" >
+        path = #{record.path,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -196,12 +216,14 @@
   <update id="updateByExample" parameterType="map" >
     update item
     set id = #{record.id,jdbcType=INTEGER},
-      typeId = #{record.typeid,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      mixture_json = #{record.mixtureJson,jdbcType=VARCHAR},
       discount = #{record.discount,jdbcType=INTEGER},
       price = #{record.price,jdbcType=REAL},
-      sale = #{record.sale,jdbcType=INTEGER}
+      vipprice = #{record.vipprice,jdbcType=REAL},
+      cost = #{record.cost,jdbcType=REAL},
+      sale = #{record.sale,jdbcType=INTEGER},
+      filename = #{record.filename,jdbcType=VARCHAR},
+      path = #{record.path,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -209,14 +231,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.bishe.pojo.Item" >
     update item
     <set >
-      <if test="typeid != null" >
-        typeId = #{typeid,jdbcType=INTEGER},
-      </if>
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="mixtureJson != null" >
-        mixture_json = #{mixtureJson,jdbcType=VARCHAR},
       </if>
       <if test="discount != null" >
         discount = #{discount,jdbcType=INTEGER},
@@ -224,20 +240,34 @@
       <if test="price != null" >
         price = #{price,jdbcType=REAL},
       </if>
+      <if test="vipprice != null" >
+        vipprice = #{vipprice,jdbcType=REAL},
+      </if>
+      <if test="cost != null" >
+        cost = #{cost,jdbcType=REAL},
+      </if>
       <if test="sale != null" >
         sale = #{sale,jdbcType=INTEGER},
+      </if>
+      <if test="filename != null" >
+        filename = #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.bishe.pojo.Item" >
     update item
-    set typeId = #{typeid,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},
-      mixture_json = #{mixtureJson,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
       discount = #{discount,jdbcType=INTEGER},
       price = #{price,jdbcType=REAL},
-      sale = #{sale,jdbcType=INTEGER}
+      vipprice = #{vipprice,jdbcType=REAL},
+      cost = #{cost,jdbcType=REAL},
+      sale = #{sale,jdbcType=INTEGER},
+      filename = #{filename,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

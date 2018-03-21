@@ -3,17 +3,21 @@ package com.bishe.pojo;
 public class Item {
     private Integer id;
 
-    private Integer typeid;
-
     private String name;
-
-    private String mixtureJson;
 
     private Integer discount;
 
     private Float price;
 
+    private Float vipprice;
+
+    private Float cost;
+
     private Integer sale;
+
+    private String filename;
+
+    private String path;
 
     public Integer getId() {
         return id;
@@ -23,28 +27,12 @@ public class Item {
         this.id = id;
     }
 
-    public Integer getTypeid() {
-        return typeid;
-    }
-
-    public void setTypeid(Integer typeid) {
-        this.typeid = typeid;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public String getMixtureJson() {
-        return mixtureJson;
-    }
-
-    public void setMixtureJson(String mixtureJson) {
-        this.mixtureJson = mixtureJson == null ? null : mixtureJson.trim();
     }
 
     public Integer getDiscount() {
@@ -63,11 +51,43 @@ public class Item {
         this.price = price;
     }
 
+    public Float getVipprice() {
+        return vipprice;
+    }
+
+    public void setVipprice(Float vipprice) {
+        this.vipprice = vipprice;
+    }
+
+    public Float getCost() {
+        return cost;
+    }
+
+    public void setCost(Float cost) {
+        this.cost = cost;
+    }
+
     public Integer getSale() {
         return sale;
     }
 
     public void setSale(Integer sale) {
         this.sale = sale;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename == null ? null : filename.trim();
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path == null ? null : path.trim();
     }
 }

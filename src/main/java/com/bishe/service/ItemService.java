@@ -2,6 +2,8 @@ package com.bishe.service;
 
 import java.util.List;
 
+import com.bishe.pojo.Item;
+import com.bishe.pojo.ItemMaterial;
 import com.bishe.pojo.ItemType;
 
 public interface ItemService {
@@ -24,5 +26,29 @@ public interface ItemService {
 	/*
 	 * 根据主键删除商品种类
 	 */
-	public void deleteItemTypeByPrimary(Integer id);
+	public void deleteItemType(Integer id);
+	/*
+	 * 添加商品
+	 */
+	public void addItem(Item item);
+	/*
+	 * 添加原料
+	 */
+	public void addItemMaterial(ItemMaterial itemMaterial);
+	/*
+	 * 查找所有原料
+	 */
+	public List<ItemMaterial> findAllItemMaterial();
+	/*
+	 * 删除原料
+	 */
+	public void deleteItemMaterial(Integer id);
+	/*
+	 * 根据主键查找原料
+	 */
+	public ItemMaterial findItemMaterialByPrimaryKey(Integer id);
+	/*
+	 * 修改原料
+	 */
+	public void updateItemMaterial(ItemMaterial itemMaterial);
 }

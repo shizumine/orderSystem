@@ -1,5 +1,6 @@
 package com.bishe.controller;
 
+import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.bishe.pojo.Item;
+import com.bishe.pojo.ItemMaterial;
 import com.bishe.pojo.ItemType;
 import com.bishe.service.ItemService;
 
@@ -62,7 +66,74 @@ public class ItemController {
 	 */
 	@RequestMapping("/deleteItemType/{id}")
 	public String deleteItemType(@PathVariable Integer id){
-		itemService.deleteItemTypeByPrimary(id);
+		itemService.deleteItemType(id);
 		return "redirect:/manage/findAllItemType";
 	}
+	/*
+	 * 添加菜品
+	 */
+	@RequestMapping("/addItem")
+	public String addItem(Model model){
+		List<ItemType> itemTypes = itemService.findAllItemType();
+		List<ItemMaterial> itemMaterials = itemService.findAllItemMaterial();
+		model.addAttribute("itemTypes",itemTypes);
+		model.addAttribute("itemMaterials",itemMaterials);
+		return "manage/addItem";
+	}
+	/*
+	 * 添加菜品提交
+	 */
+	
+	/*
+	 * 添加原料提交
+	 */
+	@RequestMapping("/addItemMaterialCommit")
+	public String addItemMaterialCommit(ItemMaterial itemMaterial){
+		itemService.addItemMaterial(itemMaterial);
+		return "redirect:/manage/findAllItemMaterial";
+	}
+	/*
+	 * 查询所有原料
+	 */
+	@RequestMapping("/findAllItemMaterial")
+	public String findAllItemMaterial(Model model){
+		List<ItemMaterial> itemMaterials = itemService.findAllItemMaterial();
+		model.addAttribute("itemMaterials",itemMaterials);
+		return "manage/findItemMaterial";
+	}
+	/*
+	 * 删除原料
+	 */
+	@RequestMapping("/deleteItemMaterial/{id}")
+	public String deleteItemMaterial(@PathVariable Integer id){
+		itemService.deleteItemMaterial(id);
+		return "redirect:/manage/findAllItemMaterial";
+	}
+	/*
+	 * 修改原料
+	 */
+	@RequestMapping("/editItemMaterial/{id}")
+	public String editItemMaterial(@PathVariable Integer id,Model model){
+		ItemMaterial itemMaterial = itemService.findItemMaterialByPrimaryKey(id);
+		model.addAttribute("itemMaterial",itemMaterial);
+		return "/manage/editItemMaterial";
+	}
+	/*
+	 * 修改原料提交
+	 */
+	@RequestMapping("/editItemMaterialCommit")
+	public String editItemMaterialCommit(ItemMaterial itemMaterial){
+		itemService.updateItemMaterial(itemMaterial);
+		return "redirect:/manage/findAllItemMaterial";
+	}
+	/*
+	 * 获取全部原料json格式
+	 */
+	@RequestMapping("/getItemMaterials")
+	@ResponseBody
+	public List<ItemMaterial> getItemMaterials(Model model){
+		List<ItemMaterial> lists = itemService.findAllItemMaterial();
+		return lists;
+	}
+	
 }

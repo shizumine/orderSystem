@@ -10,5 +10,4 @@ function show_confirm(href){
 	}else{
 		return;
 	}
-	
 }

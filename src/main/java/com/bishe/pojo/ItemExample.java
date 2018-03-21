@@ -164,66 +164,6 @@ public class ItemExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeidIsNull() {
-            addCriterion("typeId is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidIsNotNull() {
-            addCriterion("typeId is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidEqualTo(Integer value) {
-            addCriterion("typeId =", value, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidNotEqualTo(Integer value) {
-            addCriterion("typeId <>", value, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidGreaterThan(Integer value) {
-            addCriterion("typeId >", value, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("typeId >=", value, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidLessThan(Integer value) {
-            addCriterion("typeId <", value, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidLessThanOrEqualTo(Integer value) {
-            addCriterion("typeId <=", value, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidIn(List<Integer> values) {
-            addCriterion("typeId in", values, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidNotIn(List<Integer> values) {
-            addCriterion("typeId not in", values, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidBetween(Integer value1, Integer value2) {
-            addCriterion("typeId between", value1, value2, "typeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeidNotBetween(Integer value1, Integer value2) {
-            addCriterion("typeId not between", value1, value2, "typeid");
-            return (Criteria) this;
-        }
-
         public Criteria andNameIsNull() {
             addCriterion("name is null");
             return (Criteria) this;
@@ -291,76 +231,6 @@ public class ItemExample {
 
         public Criteria andNameNotBetween(String value1, String value2) {
             addCriterion("name not between", value1, value2, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonIsNull() {
-            addCriterion("mixture_json is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonIsNotNull() {
-            addCriterion("mixture_json is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonEqualTo(String value) {
-            addCriterion("mixture_json =", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonNotEqualTo(String value) {
-            addCriterion("mixture_json <>", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonGreaterThan(String value) {
-            addCriterion("mixture_json >", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonGreaterThanOrEqualTo(String value) {
-            addCriterion("mixture_json >=", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonLessThan(String value) {
-            addCriterion("mixture_json <", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonLessThanOrEqualTo(String value) {
-            addCriterion("mixture_json <=", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonLike(String value) {
-            addCriterion("mixture_json like", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonNotLike(String value) {
-            addCriterion("mixture_json not like", value, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonIn(List<String> values) {
-            addCriterion("mixture_json in", values, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonNotIn(List<String> values) {
-            addCriterion("mixture_json not in", values, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonBetween(String value1, String value2) {
-            addCriterion("mixture_json between", value1, value2, "mixtureJson");
-            return (Criteria) this;
-        }
-
-        public Criteria andMixtureJsonNotBetween(String value1, String value2) {
-            addCriterion("mixture_json not between", value1, value2, "mixtureJson");
             return (Criteria) this;
         }
 
@@ -484,6 +354,126 @@ public class ItemExample {
             return (Criteria) this;
         }
 
+        public Criteria andVippriceIsNull() {
+            addCriterion("vipprice is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceIsNotNull() {
+            addCriterion("vipprice is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceEqualTo(Float value) {
+            addCriterion("vipprice =", value, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceNotEqualTo(Float value) {
+            addCriterion("vipprice <>", value, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceGreaterThan(Float value) {
+            addCriterion("vipprice >", value, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceGreaterThanOrEqualTo(Float value) {
+            addCriterion("vipprice >=", value, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceLessThan(Float value) {
+            addCriterion("vipprice <", value, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceLessThanOrEqualTo(Float value) {
+            addCriterion("vipprice <=", value, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceIn(List<Float> values) {
+            addCriterion("vipprice in", values, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceNotIn(List<Float> values) {
+            addCriterion("vipprice not in", values, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceBetween(Float value1, Float value2) {
+            addCriterion("vipprice between", value1, value2, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andVippriceNotBetween(Float value1, Float value2) {
+            addCriterion("vipprice not between", value1, value2, "vipprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostIsNull() {
+            addCriterion("cost is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostIsNotNull() {
+            addCriterion("cost is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostEqualTo(Float value) {
+            addCriterion("cost =", value, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostNotEqualTo(Float value) {
+            addCriterion("cost <>", value, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostGreaterThan(Float value) {
+            addCriterion("cost >", value, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostGreaterThanOrEqualTo(Float value) {
+            addCriterion("cost >=", value, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostLessThan(Float value) {
+            addCriterion("cost <", value, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostLessThanOrEqualTo(Float value) {
+            addCriterion("cost <=", value, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostIn(List<Float> values) {
+            addCriterion("cost in", values, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostNotIn(List<Float> values) {
+            addCriterion("cost not in", values, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostBetween(Float value1, Float value2) {
+            addCriterion("cost between", value1, value2, "cost");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostNotBetween(Float value1, Float value2) {
+            addCriterion("cost not between", value1, value2, "cost");
+            return (Criteria) this;
+        }
+
         public Criteria andSaleIsNull() {
             addCriterion("sale is null");
             return (Criteria) this;
@@ -541,6 +531,146 @@ public class ItemExample {
 
         public Criteria andSaleNotBetween(Integer value1, Integer value2) {
             addCriterion("sale not between", value1, value2, "sale");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameIsNull() {
+            addCriterion("filename is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameIsNotNull() {
+            addCriterion("filename is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameEqualTo(String value) {
+            addCriterion("filename =", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameNotEqualTo(String value) {
+            addCriterion("filename <>", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameGreaterThan(String value) {
+            addCriterion("filename >", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameGreaterThanOrEqualTo(String value) {
+            addCriterion("filename >=", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameLessThan(String value) {
+            addCriterion("filename <", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameLessThanOrEqualTo(String value) {
+            addCriterion("filename <=", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameLike(String value) {
+            addCriterion("filename like", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameNotLike(String value) {
+            addCriterion("filename not like", value, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameIn(List<String> values) {
+            addCriterion("filename in", values, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameNotIn(List<String> values) {
+            addCriterion("filename not in", values, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameBetween(String value1, String value2) {
+            addCriterion("filename between", value1, value2, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andFilenameNotBetween(String value1, String value2) {
+            addCriterion("filename not between", value1, value2, "filename");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathIsNull() {
+            addCriterion("path is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathIsNotNull() {
+            addCriterion("path is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathEqualTo(String value) {
+            addCriterion("path =", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathNotEqualTo(String value) {
+            addCriterion("path <>", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathGreaterThan(String value) {
+            addCriterion("path >", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathGreaterThanOrEqualTo(String value) {
+            addCriterion("path >=", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathLessThan(String value) {
+            addCriterion("path <", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathLessThanOrEqualTo(String value) {
+            addCriterion("path <=", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathLike(String value) {
+            addCriterion("path like", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathNotLike(String value) {
+            addCriterion("path not like", value, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathIn(List<String> values) {
+            addCriterion("path in", values, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathNotIn(List<String> values) {
+            addCriterion("path not in", values, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathBetween(String value1, String value2) {
+            addCriterion("path between", value1, value2, "path");
+            return (Criteria) this;
+        }
+
+        public Criteria andPathNotBetween(String value1, String value2) {
+            addCriterion("path not between", value1, value2, "path");
             return (Criteria) this;
         }
     }

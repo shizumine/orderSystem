@@ -5,18 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bishe.mapper.ItemMapper;
 import com.bishe.mapper.ItemMaterialMapper;
 import com.bishe.mapper.ItemTypeMapper;
-import com.bishe.pojo.ItemExample;
+import com.bishe.pojo.Item;
+import com.bishe.pojo.ItemMaterial;
+import com.bishe.pojo.ItemMaterialExample;
 import com.bishe.pojo.ItemType;
 import com.bishe.pojo.ItemTypeExample;
 import com.bishe.service.ItemService;
 
 @Service
 public class ItemServiceImpl implements ItemService {
-	@Autowired
-	private ItemMapper itemMapper;
 	@Autowired
 	private ItemTypeMapper itemTypeMapper;
 	@Autowired
@@ -40,7 +39,33 @@ public class ItemServiceImpl implements ItemService {
 		itemTypeMapper.updateByPrimaryKey(itemType);
 	}
 
-	public void deleteItemTypeByPrimary(Integer id) {
+	public void deleteItemType(Integer id) {
 		itemTypeMapper.deleteByPrimaryKey(id);
+	}
+
+	public void addItem(Item item) {
+		//TODO sth
+	}
+	
+	public void addItemMaterial(ItemMaterial itemMaterial) {
+		itemMaterialMapper.insert(itemMaterial);
+	}
+
+	public List<ItemMaterial> findAllItemMaterial() {
+		ItemMaterialExample example = new ItemMaterialExample();
+		List<ItemMaterial> list = itemMaterialMapper.selectByExample(example);
+		return list;
+	}
+
+	public void deleteItemMaterial(Integer id) {
+		itemMaterialMapper.deleteByPrimaryKey(id);
+	}
+
+	public ItemMaterial findItemMaterialByPrimaryKey(Integer id) {
+		return itemMaterialMapper.selectByPrimaryKey(id);
+	}
+
+	public void updateItemMaterial(ItemMaterial itemMaterial) {
+		itemMaterialMapper.updateByPrimaryKey(itemMaterial);
 	}
 }
