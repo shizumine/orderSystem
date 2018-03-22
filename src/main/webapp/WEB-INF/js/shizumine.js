@@ -11,3 +11,4 @@ function show_confirm(href){
 		return;
 	}
 }
+

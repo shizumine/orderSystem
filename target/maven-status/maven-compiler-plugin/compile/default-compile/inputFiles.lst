@@ -6,6 +6,7 @@ D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\pojo\ItemExample.java
 D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\service\ItemService.java
 D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\util\MD5ConvertUtil.java
 D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\mapper\ItemItemMaterialMapper.java
+D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\util\UUIDUtil.java
 D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\mapper\ItemMapper.java
 D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\pojo\ItemTypeExample.java
 D:\Workspace\Eclipse\orderSystem\src\main\java\com\bishe\pojo\Item.java

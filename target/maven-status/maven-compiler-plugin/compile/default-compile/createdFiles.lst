@@ -26,6 +26,7 @@ com\bishe\pojo\ItemItemTypeExample.class
 com\bishe\pojo\ItemMaterialExample.class
 com\bishe\pojo\ItemItemTypeExample$Criteria.class
 com\bishe\pojo\Item.class
+com\bishe\util\UUIDUtil.class
 com\bishe\service\impl\ItemServiceImpl.class
 com\bishe\mapper\ItemTypeMapper.class
 com\bishe\mapper\ItemMapper.class

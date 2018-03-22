@@ -103,7 +103,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.bishe.pojo.Item" >
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.bishe.pojo.Item" >
     insert into item (id, name, discount, 
       price, vipprice, cost, sale, 
       filename, path)

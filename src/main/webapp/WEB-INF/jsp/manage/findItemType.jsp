@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp"%>
 
-<div class="col-md-10">
+<div class="col-md-offset-2 col-md-10">
 	<div class="pull-right">
 		<button class="btn btn-success" data-toggle="modal"
 			data-target="#addOne">

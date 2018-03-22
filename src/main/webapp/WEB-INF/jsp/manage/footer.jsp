@@ -8,5 +8,6 @@
 <script type="text/javascript" src="/plugins/jquery-weui/js/jquery-weui.js"></script>
 <script type="text/javascript" src="/plugins/jquery-weui/js/swiper.js"></script>
 <script type="text/javascript" src="/plugins/jquery-weui/lib/fastclick.js"></script>
+<script type="text/javascript" src="/plugins/layer/layer.js"></script>
 <script type="text/javascript" src="/js/shizumine.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>

@@ -17,7 +17,7 @@ function add_material_line() {
 		success : function(data) {
 			var option = "";
 			for (var i = 0; i < data.length; i++) {
-				var str = "<option value='" + data[i].id
+				var str = "<option  value='" + data[i].id
 						+ "'>" + data[i].name
 						+ "</option>";
 				option = option + str;
@@ -25,7 +25,7 @@ function add_material_line() {
 			var html = "<div class='form-group'>"
 					+ "<label class='col-md-2 control-label'>菜品原料及数量</label>"
 					+ "<div class='col-md-2'>"
-					+ "<select name='materialId' class='form-control'>"
+					+ "<select class='form-control' name='materialId'>"
 					+ "<option>---请选择原料---</option>"
 					+ option
 					+ "</select>"
@@ -35,9 +35,10 @@ function add_material_line() {
 					+ "class='form-control pull-left' style='width: 50%;'>"
 					+ "</div>" + "</div>";
 			$("#material-line").append(html);
+			layer.msg("添加成功");
 		},
 		error : function() {
-			
+			layer.msg("服务器正忙！");
 		}
 	});
 }

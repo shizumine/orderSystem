@@ -2,6 +2,8 @@ package com.bishe.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.bishe.pojo.Item;
 import com.bishe.pojo.ItemMaterial;
 import com.bishe.pojo.ItemType;
@@ -30,7 +32,10 @@ public interface ItemService {
 	/*
 	 * 添加商品
 	 */
-	public void addItem(Item item);
+	public void addItem(Item item,
+						Integer[] materialId,
+						Integer itemTypeId,
+						Integer[] materialNum);
 	/*
 	 * 添加原料
 	 */
