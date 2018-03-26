@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp"%>
-<div class="col-md-offset-2 col-md-10">
+<div class="col-md-10">
 	<form role="form" action="/manage/editItemTypeCommit" method="post">
 		<input type="hidden" value="${itemType.id}" name="id" />
 		<div class="form-group">

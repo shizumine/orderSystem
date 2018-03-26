@@ -14,19 +14,17 @@
 	href="/plugins/theme/default/layer.css" />
 </head>
 
-
-</head>
 <body>
 	<nav class="navbar navbar-default navbar-cls-top " role="navigation"
 		style="margin-bottom: 0">
-		<div class="navbar-header">
+		<div class="navbar-header col-md-2">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".sidebar-collapse">
 				<span class="sr-only">Toggle navigation</span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">彭彭订餐后台</a>
+			<a class="navbar-brand" href="/manage/index">彭彭订餐后台</a>
 		</div>
 		<div class="header-right">
 			<a href="message-task.html" class="btn btn-info" title="New Message"><b>30
@@ -38,7 +36,7 @@
 		</div>
 	</nav>
 
-	<nav class="navbar-default navbar-side" role="navigation">
+	<nav class="col-md-2 navbar-default navbar-side" role="navigation">
 		<div class="sidebar-collapse">
 			<ul class="nav" id="main-menu">
 				<li>
@@ -46,13 +44,15 @@
 				</li>
 				<li><a href="index.html"><i class="fa fa-dashboard "></i>Home</a>
 				</li>
+				<!-- 主菜单  -->
 				<li><a href="#" type="button" data-toggle="collapse"
 					data-target="#menu-manage">菜品管理</a>
+					<!-- 次级菜单 -->
 					<ul id="menu-manage" class="dropdown collapse">
-						<li><a href="/manage/findAllItemType">查询菜品种类</a></li>
-						<li><a href="/manage/findAllItemMaterial">查询原料</a></li>
+						<li><a href="/manage/findAllItemType">菜品种类管理</a></li>
+						<li><a href="/manage/findAllItemMaterial">原料种类管理</a></li>
 						<li><a href="/manage/addItem">添加菜品</a></li>
-						<li><a href="/manage/findItem">查询菜品</a></li>
+						<li><a href="/manage/findAllItem">菜品管理</a></li>
 					</ul>
 				</li>
 			</ul>

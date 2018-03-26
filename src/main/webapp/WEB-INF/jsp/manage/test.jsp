@@ -75,6 +75,18 @@
 			</li>
 		</ul>
 	</div>
+
+	<div class="col-md-10 items">
+		<div class="col-md-2 item">
+			<div class="item-pic">
+				<img src="${item.path}${item.filename}" class="img-rounded">
+			</div>
+			<div class="item-price">
+				<span class="price-symbol">¥</span> <span class="price">${item.price }</span>
+				<span class="text-primary">折扣:</span> <span class="discount">${item.discount }</span>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 <script type="text/javascript" src="/plugins/jquery/jquery-3.2.1.min.js"></script>

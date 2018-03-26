@@ -1,13 +1,16 @@
 @CHARSET "UTF-8";
 
+* {
+	padding: 0;
+	margin: 0;
+}
+
 .navbar-header {
 	background-color: #000000;
 }
 
 .navbar-cls-top .navbar-brand {
 	color: #fff;
-	background: #202020;
-	width: 260px;
 	text-align: center;
 	height: 75px;
 	font-size: 20px;
@@ -19,10 +22,10 @@
 
 .header-right {
 	color: #fff;
-	padding-top:15px;
-	padding-right:50px;
-	padding-bottom:5px;
-	padding-left:50px;
+	padding-top: 15px;
+	padding-right: 50px;
+	padding-bottom: 5px;
+	padding-left: 50px;
 	float: right;
 	font-size: 16px;
 }
@@ -31,58 +34,93 @@
 	background: #00CA79;
 }
 
-.navbar-side {
-    z-index: 1;
-    position: absolute;
-    width:260px;
-}
-
 .navbar-default {
-    border: 0px solid black;
+	border: 0px solid black;
 }
 
 .navbar-side {
-    border: none;
-    background-color: #202020;
+	border: none;
+	background-color: #202020;
+	height: 31.66rem;
 }
 
-.nav > li {
-    position: relative;
-    display: block;
+.nav>li {
+	position: relative;
+	display: block;
 }
 
 .sidebar-collapse .nav {
-    padding: 0;
+	padding: 0;
 }
 
 .sidebar-collapse, .sidebar-collapse .nav {
-    background: none;
+	background: none;
 }
 
-.sidebar-collapse > .nav > li > a {
-    padding: 15px 10px;
+.sidebar-collapse>.nav>li>a {
+	padding: 15px 10px;
 }
 
-.sidebar-collapse .nav > li > a {
-    color: #fff;
-    background: #202020;
-    text-shadow: none;
-    padding: 10px 40px;
-    border-bottom: 1px solid #2F2E31;
-}
-
-.sidebar-collapse .dropdown > li{
-	list-style:none;
-}
-
-.sidebar-collapse .dropdown > li > a{
+.sidebar-collapse .nav>li>a {
 	color: #fff;
-	padding-left:20px;
-	
+	background: #202020;
+	text-shadow: none;
+	padding: 10px 40px;
+	border-bottom: 1px solid #2F2E31;
+}
+
+.sidebar-collapse .dropdown>li {
+	list-style: none;
+}
+
+.sidebar-collapse .dropdown >li >a {
+	color: #fff;
+	font-size: 10px;
+	padding-left: 21%;
+	text-decoration: none;
+	line-height: 30px;
+}
+
+.sidebar-collapse .dropdown >li >a:hover {
+	color: #ff8080;
+	border-bottom:1px solid ##00CA79;
 }
 
 .user-img-div {
-    min-height: 140px;	
-    padding: 20px;
-    background-color: #4380B8;
+	min-height: 140px;
+	padding: 20px;
+	background-color: #4380B8;
+}
+
+.items .item {
+	padding: 0;
+	height: 300px;
+	margin: 20px 20px;
+	border: 1px solid black;
+}
+
+.items .item .item-pic {
+	width: 100%;
+	border: 1px solid blue;
+}
+
+.items .item .item-pic img {
+	height: 150px;
+	width: 100%;
+}
+
+.items .item .item-price {
+	height: 50px;
+	border-bottom: 1px solid green;
+}
+
+.items .item .item-price .price-symbol {
+	font-size: 20px;
+	color: #f25d8e;
+}
+
+.items .item .item-price .price {
+	margin-left: 10px;
+	font-size: 24px;
+	color: #f25d8e;
 }

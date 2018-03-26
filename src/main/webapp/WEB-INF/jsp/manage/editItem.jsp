@@ -4,42 +4,48 @@
 <%@ include file="header.jsp"%>
 <div class="col-md-10">
 	<form role="form" class="form-horizontal"
-		action="/manage/addItemCommit" method="post"
+		action="/manage/editItemCommit" method="post"
 		enctype="multipart/form-data">
-		<div class="form-group"><h2 class="col-md-offset-2 col-md-2">添加菜品</h2></div>
+		<div class="form-group">
+			<h2 class="col-md-offset-2 col-md-2">添加菜品</h2>
+		</div>
+		<input type="hidden" name="id" value="${item.id }">
 		<div class="form-group">
 			<label for="name" class="col-md-2 control-label">菜品名称</label>
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="name" name="name"
-					placeholder="请输入菜品名称" maxlength="20" required="required">
+					placeholder="请输入菜品名称" maxlength="20" required="required"
+					value="${item.name }">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="discount" class="col-md-2 control-label">折扣</label>
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="discount"
-					name="discount" placeholder="折扣(1-9)折，0为不打折" required="required">
+					name="discount" placeholder="折扣(1-9)折，0为不打折" required="required"
+					value="${item.discount}">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="price" class="col-md-2 control-label">价格</label>
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="price" name="price"
-					placeholder="请输入价格" required="required">
+					placeholder="请输入价格" required="required" value="${item.price}">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="vipprice" class="col-md-2 control-label">会员价</label>
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="vipprice"
-					name="vipprice" placeholder="请输入会员价" required="required">
+					name="vipprice" placeholder="请输入会员价" required="required"
+					value="${item.vipprice }">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="cost" class="col-md-2 control-label">成本</label>
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="cost" name="cost"
-					placeholder="请输入成本" required="required">
+					placeholder="请输入成本" required="required" value="${item.cost }">
 			</div>
 		</div>
 		<div class="form-group">
@@ -59,11 +65,18 @@
 			</div>
 		</div>
 		<div id="material-line"></div>
-		<input type="hidden" name="sale" value="0" />
 		<div class="form-group">
-			<div class="col-md-offset-2">
-				<label for="inputfile">上传图片</label> <input type="file"
-					id="inputfile" name="inputfile">
+			<label for="sale" class="col-md-2 control-label">销售量</label>
+			<div class="col-md-4">
+				<input class="form-control" type="text" name="sale"
+					value="${item.sale }" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-2" for="inputfile">上传图片</label>
+			<div class="col-md-4">
+				<input type="file" id="inputfile" name="inputfile"> <img
+					src="${item.path }${item.filename}" class="img-rounded" style="height: 150px;">
 			</div>
 		</div>
 		<div class="form-group">
@@ -72,6 +85,5 @@
 			</div>
 		</div>
 	</form>
-
 </div>
 <%@ include file="footer.jsp"%>

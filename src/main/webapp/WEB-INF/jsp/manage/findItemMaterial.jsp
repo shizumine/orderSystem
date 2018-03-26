@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp"%>
 
-<div class="col-md-offset-2 col-md-10">
+<div class="col-md-10">
 	<div class="pull-right">
 		<button class="btn btn-success" data-toggle="modal"
 			data-target="#addOne">
@@ -44,8 +44,13 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-body">
-				<form role="form" class="form-horizontal" 	action="/manage/addItemMaterialCommit"
-					method="post">
+				<form role="form" class="form-horizontal"
+					action="/manage/addItemMaterialCommit" method="post">
+					<div class="form-group">
+						<div class="text-center">
+							<h3>添加原料</h3>
+						</div>
+					</div>
 					<div class="form-group">
 						<label for="name" class="col-md-3 control-label">原料名称</label>
 						<div class="col-md-9">
@@ -75,8 +80,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="text-right">
+						<div class="col-md-offset-8 col-md-4">
 							<button type="submit" class="btn btn-success">提交</button>
+							<button class="btn btn-danger" data-dismiss="modal">取消</button>
 						</div>
 					</div>
 				</form>

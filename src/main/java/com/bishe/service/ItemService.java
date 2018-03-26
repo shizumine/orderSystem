@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bishe.pojo.Item;
+import com.bishe.pojo.ItemForm;
 import com.bishe.pojo.ItemMaterial;
 import com.bishe.pojo.ItemType;
 
@@ -30,12 +31,24 @@ public interface ItemService {
 	 */
 	public void deleteItemType(Integer id);
 	/*
-	 * 添加商品
+	 * 添加菜品
 	 */
 	public void addItem(Item item,
 						Integer[] materialId,
 						Integer itemTypeId,
 						Integer[] materialNum);
+	/*
+	 * 查询菜品以及附属的菜品种类名称
+	 */
+	public List<ItemForm> findAllItem();
+	/*
+	 * 删除菜品
+	 */
+	public void deleteItem(Integer id);
+	/*
+	 * 根据主键查询菜品
+	 */
+	public Item findItemByPrimar(Integer id);
 	/*
 	 * 添加原料
 	 */
@@ -56,4 +69,8 @@ public interface ItemService {
 	 * 修改原料
 	 */
 	public void updateItemMaterial(ItemMaterial itemMaterial);
+	/*
+	 * 更新商品
+	 */
+	public void updateItem(Item item, Integer[] materialId, Integer itemTypeId, Integer[] materialNum);
 }

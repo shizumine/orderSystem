@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="header.jsp"%>
 
-<div class="col-md-offset-2 col-md-10">
+<div class="col-md-10">
 	<div class="pull-right">
 		<button class="btn btn-success" data-toggle="modal"
 			data-target="#addOne">
@@ -41,8 +41,13 @@
 				<form role="form" class="form-horizontal"
 					action="/manage/addItemTypeCommit" method="post">
 					<div class="form-group">
+						<div class="text-center">
+							<h3>添加菜品种类</h3>
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="name" class="col-md-3 control-label">菜品种类名称</label>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<input type="text" class="form-control" id="name" name="name"
 								placeholder="请输入菜品种类名称" maxlength="20" required="required">
 						</div>

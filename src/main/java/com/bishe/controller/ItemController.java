@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bishe.pojo.Item;
+import com.bishe.pojo.ItemForm;
 import com.bishe.pojo.ItemMaterial;
 import com.bishe.pojo.ItemType;
 import com.bishe.service.ItemService;
@@ -120,6 +121,71 @@ public class ItemController {
 			inputfile.transferTo(filepath);
 			// 将数据存入数据库
 			itemService.addItem(item, materialId, itemTypeId, materialNum);
+
+			return "redirect:/manage/findAllItem";
+		} else {
+			return "error";
+		}
+	}
+
+	/*
+	 * 查询菜品
+	 */
+	@RequestMapping("/findAllItem")
+	public String findAllItem(Model model) {
+		List<ItemForm> items = itemService.findAllItem();
+		model.addAttribute("items", items);
+		return "manage/findItem";
+	}
+
+	/*
+	 * 删除菜品
+	 */
+	@RequestMapping("/deleteItem/{id}")
+	public String deleteItem(@PathVariable Integer id) {
+		itemService.deleteItem(id);
+		return "redirect:/manage/findAllItem";
+	}
+
+	/*
+	 * 修改菜品
+	 */
+	@RequestMapping("/editItem/{id}")
+	public String editItem(@PathVariable Integer id, Model model) {
+		Item item = itemService.findItemByPrimar(id);
+		List<ItemType> itemTypes = itemService.findAllItemType();
+		model.addAttribute("item", item);
+		model.addAttribute("itemTypes", itemTypes);
+		return "/manage/editItem";
+	}
+
+	/*
+	 * 修改菜品提交
+	 */
+	@RequestMapping("/editItemCommit")
+	public String editItemCommit(Item item, MultipartFile inputfile, Integer[] materialId, Integer itemTypeId,
+			Integer[] materialNum, HttpSession session) throws IllegalStateException, IOException {
+		if (!inputfile.isEmpty()) {
+			// 设置item的文件名 UUID_filename 的格式存入数据
+			String oldFileName = inputfile.getOriginalFilename();
+			StringBuffer sb = new StringBuffer();
+			sb.append(UUIDUtil.getUUID() + "_" + oldFileName);
+			String filename = sb.toString();
+			item.setFilename(filename);
+
+			// 获取存储的真实路径
+			String path = "/pic/";
+			String directory = session.getServletContext().getRealPath(path);
+			item.setPath(path);
+			File filepath = new File(directory, filename);
+			// 判断路径是否存在，如果不存在就创建一个
+			if (!filepath.getParentFile().exists()) {
+				filepath.getParentFile().mkdirs();
+			}
+			// 将文件存入服务器
+			inputfile.transferTo(filepath);
+			// 将数据存入数据库
+			itemService.updateItem(item, materialId, itemTypeId, materialNum);
 
 			return "redirect:/manage/findAllItem";
 		} else {
