@@ -34,4 +34,11 @@ public class PageController {
 	public String showManagePage(@PathVariable String page){
 		return "manage/"+page;
 	}
+	/*
+	 * 展示登录页面
+	 */
+	@RequestMapping("/admin/{page}")
+	public String showAdminPage(@PathVariable String page){
+		return "admin/"+page;
+	}
 }

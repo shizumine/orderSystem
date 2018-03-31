@@ -9,12 +9,13 @@
 	href="/plugins/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="/plugins/jquery-weui/css/jquery-weui.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/index.css" />
 <link rel="stylesheet" type="text/css"
-	href="/plugins/theme/default/layer.css" />
+	href="/plugins/layer/theme/default/layer.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 
 <body>
+	<div id="header">
 	<nav class="navbar navbar-default navbar-cls-top " role="navigation"
 		style="margin-bottom: 0">
 		<div class="navbar-header col-md-2">
@@ -30,31 +31,38 @@
 			<a href="message-task.html" class="btn btn-info" title="New Message"><b>30
 			</b><i class="fa fa-envelope-o fa-2x"></i></a> <a href="message-task.html"
 				class="btn btn-primary" title="New Task"><b>40 </b><i
-				class="fa fa-bars fa-2x"></i></a> <a href="login.html"
+				class="fa fa-bars fa-2x"></i></a> <a href="/manage/login"
 				class="btn btn-danger" title="Logout"><i
 				class="fa fa-exclamation-circle fa-2x"></i></a>
 		</div>
 	</nav>
+	</div>
 
+	<div id="nav-side">
 	<nav class="col-md-2 navbar-default navbar-side" role="navigation">
 		<div class="sidebar-collapse">
 			<ul class="nav" id="main-menu">
 				<li>
-					<div class="user-img-div"></div>
+					<div class="user-img-div">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6"></div>
+								<div class="col-md-6"></div>
+							</div>
+						</div>
+					</div>
 				</li>
 				<li><a href="index.html"><i class="fa fa-dashboard "></i>Home</a>
 				</li>
 				<!-- 主菜单  -->
-				<li><a href="#" type="button" data-toggle="collapse"
-					data-target="#menu-manage">菜品管理</a>
-					<!-- 次级菜单 -->
+				<li><a type="button" data-toggle="collapse"
+					data-target="#menu-manage" style="cursor: pointer;">菜品管理</a> <!-- 次级菜单 -->
 					<ul id="menu-manage" class="dropdown collapse">
 						<li><a href="/manage/findAllItemType">菜品种类管理</a></li>
 						<li><a href="/manage/findAllItemMaterial">原料种类管理</a></li>
-						<li><a href="/manage/addItem">添加菜品</a></li>
 						<li><a href="/manage/findAllItem">菜品管理</a></li>
-					</ul>
-				</li>
+					</ul></li>
 			</ul>
 		</div>
 	</nav>
+	</div>
