@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +73,14 @@ public class ItemController {
 		itemService.updateItemType(itemType);
 		return "redirect:/manage/findAllItemType";
 	}
+	/*
+	 * 查询商品种类 json
+	 */
+	@RequestMapping("/getItemType")
+	@ResponseBody
+	public ItemType getItemType(Integer id){
+		return itemService.findItemTypeByPrimaryKey(id);
+	}
 
 	/*
 	 * 根据主键删除商品种类
@@ -134,8 +141,18 @@ public class ItemController {
 	@RequestMapping("/findAllItem")
 	public String findAllItem(Model model) {
 		List<ItemForm> items = itemService.findAllItem();
+		List<ItemType> itemTypes = itemService.findAllItemType();
 		model.addAttribute("items", items);
+		model.addAttribute("itemTypes",itemTypes);
 		return "manage/findItem";
+	}
+	/*
+	 * 查询单个菜品 json
+	 */
+	@RequestMapping("/getItem")
+	@ResponseBody
+	public Item getItem(Integer id){
+		return itemService.findItemByPrimar(id);
 	}
 
 	/*
@@ -239,7 +256,14 @@ public class ItemController {
 		itemService.updateItemMaterial(itemMaterial);
 		return "redirect:/manage/findAllItemMaterial";
 	}
-
+	/*
+	 * 通过主键获取原料 json
+	 */
+	@RequestMapping("/getItemMaterial")
+	@ResponseBody
+	public ItemMaterial getItemMaterial(Integer id){
+		return itemService.findItemMaterialByPrimaryKey(id);
+	}
 	/*
 	 * 获取全部原料json格式
 	 */
